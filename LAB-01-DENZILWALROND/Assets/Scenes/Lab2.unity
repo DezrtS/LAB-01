@@ -1324,9 +1324,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path:
-  - pos: {x: 0, y: 0, z: 0}
-  - pos: {x: 0, y: 1, z: 2.4800649}
-  - pos: {x: 0, y: 1, z: 1}
+  - pos: {x: -1, y: 1, z: 0}
+  - pos: {x: 1, y: 1, z: -2}
+  - pos: {x: 3, y: 1, z: -3}
+  - pos: {x: 6, y: 1, z: -2}
+  - pos: {x: 8, y: 1, z: 1}
+  - pos: {x: 6, y: 1, z: 2}
+  - pos: {x: 5, y: 1, z: 4}
+  - pos: {x: 3, y: 1, z: 4}
+  - pos: {x: 2, y: 1, z: 2}
+  - pos: {x: -4, y: 1, z: 1}
+  - pos: {x: -4, y: 1, z: -1}
+  - pos: {x: -2, y: 1, z: -2}
   alpha: 0.5
   numOfSplinePoints: 25
   prefab: {fileID: 8923065205936489998, guid: bc69b4271084a0145927fff1f6b3e96e, type: 3}
@@ -2075,6 +2084,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4086279202973348, guid: c20397bf1592dc040b827e8716b0bd41, type: 3}
   m_PrefabInstance: {fileID: 1235955616}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1235955618 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95922273507661854, guid: c20397bf1592dc040b827e8716b0bd41, type: 3}
+  m_PrefabInstance: {fileID: 1235955616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1308269143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2697,6 +2711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathManager: {fileID: 814023832}
+  animator: {fileID: 1235955618}
   MoveSpeed: 1
   RotateSpeed: 1
 --- !u!136 &1787209966

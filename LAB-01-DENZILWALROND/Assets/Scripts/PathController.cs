@@ -8,6 +8,9 @@ public class PathController : MonoBehaviour
     [SerializeField]
     private PathManager pathManager;
 
+    [SerializeField] Animator animator;
+    bool isWalking;
+
     List<Waypoint> thePath;
     Waypoint target;
 
@@ -17,6 +20,9 @@ public class PathController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isWalking = false;
+        animator.SetBool("isWalking", false);
+
         thePath = pathManager.GetPath();
         if (thePath != null && thePath.Count > 0)
         {
@@ -48,8 +54,17 @@ public class PathController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotateTowardsTarget();
-        MoveForward();
+        if (Input.anyKeyDown)
+        {
+            isWalking = !isWalking;
+            animator.SetBool("isWalking", isWalking);
+            animator.SetTrigger("CheckWalking");
+        }
+        if (isWalking)
+        {
+            rotateTowardsTarget();
+            MoveForward();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
