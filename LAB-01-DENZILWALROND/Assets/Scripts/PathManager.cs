@@ -8,6 +8,9 @@ public class PathManager : MonoBehaviour
     [SerializeField]
     public List<Waypoint> path;
 
+    public float alpha = 0.5f;
+    public int numOfSplinePoints = 10;
+
     public GameObject prefab;
     int currrentPointIndex = 0;
 
