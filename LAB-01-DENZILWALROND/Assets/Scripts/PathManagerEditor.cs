@@ -169,8 +169,8 @@ public class PathManagerEditor : Editor
     {
         // draw a line between current and next point
         Color c = Handles.color;
-        Handles.color = Color.gray;
-        Handles.DrawLine(p1, p2);
+        Handles.color = Color.white;
+        Handles.DrawLine(p1, p2, 2f);
         Handles.color = c;
     }
 

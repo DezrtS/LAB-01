@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Jobs;
 
-public class PathController : MonoBehaviour
+public class CPUPathController : MonoBehaviour
 {
     [SerializeField]
     private PathManager pathManager;
@@ -20,8 +19,9 @@ public class PathController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isWalking = false;
-        animator.SetBool("isWalking", false);
+        isWalking = true;
+        animator.SetBool("isWalking", isWalking);
+        animator.SetTrigger("CheckWalking");
 
         thePath = pathManager.GetPath();
         if (thePath != null && thePath.Count > 0)
@@ -54,12 +54,6 @@ public class PathController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
-        {
-            isWalking = !isWalking;
-            animator.SetBool("isWalking", isWalking);
-            //animator.SetTrigger("CheckWalking");
-        }
         if (isWalking)
         {
             rotateTowardsTarget();
@@ -69,9 +63,23 @@ public class PathController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PathA"))
+        if (other.CompareTag("Player"))
+        {
+            isWalking = false;
+            animator.SetBool("isWalking", isWalking);
+        }
+        else if (other.CompareTag("PathB"))
         {
             target = pathManager.GetNextTarget();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isWalking = true;
+            animator.SetBool("isWalking", isWalking);
         }
     }
 }

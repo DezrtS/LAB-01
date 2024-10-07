@@ -11,6 +11,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: isWalking
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: CheckWalking
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102101464073831304}
   m_Solo: 0
@@ -36,6 +39,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: isWalking
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: CheckWalking
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102343668222035180}
   m_Solo: 0
@@ -56,7 +62,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwordAndShield
+  m_Name: SwordAndShield 1
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isWalking
@@ -64,7 +70,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
+  - m_Name: CheckWalking
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -294,7 +306,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk_SwordShield
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -31000109956545550}
@@ -541,34 +553,34 @@ AnimatorStateMachine:
     m_Position: {x: 280, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102812240053027482}
-    m_Position: {x: 790, y: 120, z: 0}
+    m_Position: {x: 492, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102911331141756510}
-    m_Position: {x: 790, y: 60, z: 0}
+    m_Position: {x: 492, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102365795188213326}
-    m_Position: {x: 900, y: 0, z: 0}
+    m_Position: {x: 600, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102545208465593906}
-    m_Position: {x: 1030, y: 60, z: 0}
+    m_Position: {x: 732, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102001917662085244}
-    m_Position: {x: 1030, y: 120, z: 0}
+    m_Position: {x: 732, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102839844569848852}
-    m_Position: {x: 1190, y: 200, z: 0}
+    m_Position: {x: 888, y: 204, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102101464073831304}
     m_Position: {x: 280, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000731563748234}
-    m_Position: {x: 1120, y: 360, z: 0}
+    m_Position: {x: 816, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102591387620917688}
-    m_Position: {x: 1250, y: 120, z: 0}
+    m_Position: {x: 948, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102847860292624354}
-    m_Position: {x: 850, y: 360, z: 0}
+    m_Position: {x: 552, y: 360, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

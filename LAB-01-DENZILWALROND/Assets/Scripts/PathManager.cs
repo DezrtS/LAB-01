@@ -21,7 +21,7 @@ public class PathManager : MonoBehaviour
         prefabPoints = new List<GameObject>();
         foreach (Waypoint p in path)
         {
-            GameObject go = Instantiate(prefab);
+            GameObject go = Instantiate(prefab, transform);
             go.transform.position = p.Pos;
             prefabPoints.Add(go);
         }
